@@ -1,0 +1,16 @@
+{
+  "3281340110464441251": "Close",
+  "@3281340110464441251": {
+    "type": "text",
+    "x-file": "/hotels/client/app/targets/common/alerts/app-error.js",
+    "x-key": "MSG_CLOSE",
+    "description": "Botón para cerrar diálogos"
+  },
+  "2241719007830394134": "Update Now",
+  "@2241719007830394134": {
+    "type": "text",
+    "x-file": "/hotels/client/app/targets/common/alerts/app-error.js",
+    "x-key": "MSG_RELOAD",
+    "description": "Botón para recargar la página después de un error"
+  }
+}
