@@ -4,8 +4,8 @@ import (
 	"log"
 	"os"
 
-	"github.com/juju/errgo"
 	"github.com/altipla-consulting/arb-reader/arbreader"
+	"github.com/juju/errgo"
 )
 
 func main() {

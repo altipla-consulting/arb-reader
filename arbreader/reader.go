@@ -9,11 +9,11 @@ import (
 )
 
 type Message struct {
-  Key string
-  Type string
-  Extended map[string]string
-  Description string
-  Value string
+	Key         string
+	Type        string
+	Extended    map[string]string
+	Description string
+	Value       string
 }
 
 func Read(reader io.Reader) ([]*Message, error) {
@@ -28,7 +28,7 @@ func Read(reader io.Reader) ([]*Message, error) {
 			continue
 		}
 
-		vv := data["@" + key].(map[string]interface{})
+		vv := data["@"+key].(map[string]interface{})
 
 		extended := map[string]string{}
 		for ekey, evalue := range vv {
@@ -40,11 +40,11 @@ func Read(reader io.Reader) ([]*Message, error) {
 		}
 
 		messages = append(messages, &Message{
-			Key: key,
-			Type: vv["type"].(string),
+			Key:         key,
+			Type:        vv["type"].(string),
 			Description: vv["description"].(string),
-			Extended: extended,
-			Value: value.(string),
+			Extended:    extended,
+			Value:       value.(string),
 		})
 	}
 
