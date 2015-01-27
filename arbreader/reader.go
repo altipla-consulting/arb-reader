@@ -13,6 +13,7 @@ type Message struct {
   Type string
   Extended map[string]string
   Description string
+  Value string
 }
 
 func Read(reader io.Reader) ([]*Message, error) {
@@ -22,7 +23,7 @@ func Read(reader io.Reader) ([]*Message, error) {
 	}
 
 	messages := []*Message{}
-	for key := range data {
+	for key, value := range data {
 		if key[0] == '@' {
 			continue
 		}
@@ -43,6 +44,7 @@ func Read(reader io.Reader) ([]*Message, error) {
 			Type: vv["type"].(string),
 			Description: vv["description"].(string),
 			Extended: extended,
+			Value: value,
 		})
 	}
 
