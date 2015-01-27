@@ -44,7 +44,7 @@ func Read(reader io.Reader) ([]*Message, error) {
 			Type: vv["type"].(string),
 			Description: vv["description"].(string),
 			Extended: extended,
-			Value: value,
+			Value: value.(string),
 		})
 	}
 
